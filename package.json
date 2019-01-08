@@ -1,0 +1,48 @@
+{
+  "name": "portalize",
+  "version": "1.0.0",
+  "description": "Symbolic Link Management Tool",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint --project .",
+    "build": "npm run lint && tsc",
+    "postbuild": "shx chmod +x ./utils/shebangify && node ./utils/shebangify ./build/cli.js",
+    "postinstall": "shx chmod +x ./build/cli.js",
+    "doc": "typedoc --out ./generated_doc --mode file ./sources/Portalize.ts  --theme markdown"
+  },
+  "bin": {
+    "portalize": "./build/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortimr/portalize.git"
+  },
+  "keywords": [
+    "symbolic",
+    "link",
+    "management",
+    "tool"
+  ],
+  "author": "Iulian Rotaru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mortimr/portalize/issues"
+  },
+  "homepage": "https://github.com/mortimr/portalize#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "js-sha3": "^0.8.0",
+    "rimraf": "^2.6.3",
+    "shx": "^0.3.2",
+    "ts-dynamic-type-checker": "0.0.13"
+  },
+  "devDependencies": {
+    "typedoc": "^0.14.0",
+    "typedoc-plugin-markdown": "^1.1.21",
+    "@types/node": "^10.12.18",
+    "@types/rimraf": "^2.0.2",
+    "linted": "^1.0.5",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  }
+}
