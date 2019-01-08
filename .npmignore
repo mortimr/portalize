@@ -1,0 +1,11 @@
+/node_modules
+.idea
+
+/sources
+README.md
+/tsconfig.json
+/tslint.json
+/portalize.config.json
+/classes
+/interfaces
+/portal
