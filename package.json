@@ -1,8 +1,8 @@
 {
   "name": "portalize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Symbolic Link Management Tool",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "lint": "tslint --project .",
     "build": "npm run lint && tsc",
