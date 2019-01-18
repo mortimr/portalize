@@ -25,7 +25,7 @@ Configuration for method calls
 
 **● desc**: *`string`*
 
-*Defined in [Portalize.ts:10](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L10)*
+*Defined in [Portalize.ts:10](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L10)*
 
 ___
 <a id="module"></a>
@@ -34,7 +34,7 @@ ___
 
 **● module**: *`string`*
 
-*Defined in [Portalize.ts:9](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L9)*
+*Defined in [Portalize.ts:9](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L9)*
 
 ___
 

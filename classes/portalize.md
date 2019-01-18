@@ -25,6 +25,7 @@
 ### Methods
 
 * [add](portalize.md#add)
+* [clean](portalize.md#clean)
 * [event](portalize.md#event)
 * [get](portalize.md#get-1)
 * [ready](portalize.md#ready)
@@ -44,7 +45,7 @@
 
 ⊕ **new Portalize**(): [Portalize](portalize.md)
 
-*Defined in [Portalize.ts:38](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L38)*
+*Defined in [Portalize.ts:38](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L38)*
 
 **Returns:** [Portalize](portalize.md)
 
@@ -58,7 +59,7 @@ ___
 
 **● module**: *`string`*
 
-*Defined in [Portalize.ts:38](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L38)*
+*Defined in [Portalize.ts:38](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L38)*
 
 ___
 <a id="portal"></a>
@@ -67,7 +68,7 @@ ___
 
 **● portal**: *`string`*
 
-*Defined in [Portalize.ts:37](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L37)*
+*Defined in [Portalize.ts:37](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L37)*
 
 ___
 <a id="instance"></a>
@@ -76,7 +77,7 @@ ___
 
 **● instance**: *[Portalize](portalize.md)*
 
-*Defined in [Portalize.ts:36](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L36)*
+*Defined in [Portalize.ts:36](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L36)*
 
 ___
 
@@ -88,7 +89,7 @@ ___
 
 getget(): [Portalize](portalize.md)
 
-*Defined in [Portalize.ts:46](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L46)*
+*Defined in [Portalize.ts:46](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L46)*
 
 Static instance getter. Portalize is a singleton.
 
@@ -104,7 +105,7 @@ ___
 
 ▸ **add**<`T`>(file: *`string`*, data: *`T`*, config?: *[CallConfig](../interfaces/callconfig.md)*): `void`
 
-*Defined in [Portalize.ts:86](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L86)*
+*Defined in [Portalize.ts:86](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L86)*
 
 Adds file. If `config.module` is provided, action occurs on file from given `config.module`, otherwise on file from current module. If `desc` is provided, description will be saved in event, otherwise event will have the end checksum of the file as description. Useful to tag events that will be required in the future.
 
@@ -122,13 +123,26 @@ Adds file. If `config.module` is provided, action occurs on file from given `con
 **Returns:** `void`
 
 ___
+<a id="clean"></a>
+
+###  clean
+
+▸ **clean**(): `void`
+
+*Defined in [Portalize.ts:237](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L237)*
+
+Cleans all events and files for current module.
+
+**Returns:** `void`
+
+___
 <a id="event"></a>
 
 ### `<Private>` event
 
 ▸ **event**(file: *`string`*, action: *`string`*, desc: *`string`*): `void`
 
-*Defined in [Portalize.ts:241](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L241)*
+*Defined in [Portalize.ts:259](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L259)*
 
 **Parameters:**
 
@@ -147,7 +161,7 @@ ___
 
 ▸ **get**<`T`>(file: *`string`*, config?: *[CallConfig](../interfaces/callconfig.md)*): `T`
 
-*Defined in [Portalize.ts:153](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L153)*
+*Defined in [Portalize.ts:153](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L153)*
 
 Gets file. If `config.module` is provided, action occurs on file from given `config.module`, otherwise on file from current module.
 
@@ -170,7 +184,7 @@ ___
 
 ▸ **ready**(): `void`
 
-*Defined in [Portalize.ts:235](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L235)*
+*Defined in [Portalize.ts:253](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L253)*
 
 **Returns:** `void`
 
@@ -181,7 +195,7 @@ ___
 
 ▸ **requires**(requirement: *[Requirement](../interfaces/requirement.md)*): `boolean`
 
-*Defined in [Portalize.ts:211](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L211)*
+*Defined in [Portalize.ts:211](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L211)*
 
 Check if the given requirements have occured. If `desc` is provided, check if any event has the exact same `desc`. `to` and `from` can be different. `from` defines the module that emits the action, `to` defines the module containing the file. If `to` is not provided, `to` == `from`
 
@@ -200,7 +214,7 @@ ___
 
 ▸ **rm**(file: *`string`*, config?: *[CallConfig](../interfaces/callconfig.md)*): `void`
 
-*Defined in [Portalize.ts:182](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L182)*
+*Defined in [Portalize.ts:182](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L182)*
 
 Removes file. If `config.module` is provided, action occurs on file from given `config.module`, otherwise on file from current module. If `desc` is provided, description will be saved in event, otherwise event will have 'rm' as description. Useful to tag events that will be required in the future.
 
@@ -220,7 +234,7 @@ ___
 
 ▸ **set**<`T`>(file: *`string`*, data: *`T`*, config?: *[CallConfig](../interfaces/callconfig.md)*): `void`
 
-*Defined in [Portalize.ts:122](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L122)*
+*Defined in [Portalize.ts:122](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L122)*
 
 Sets file. If `config.module` is provided, action occurs on file from given `config.module`, otherwise on file from current module. If `desc` is provided, description will be saved in event, otherwise event will have the end checksum of the file as description. Useful to tag events that will be required in the future.
 
@@ -244,7 +258,7 @@ ___
 
 ▸ **setModuleName**(name: *`string`*): `void`
 
-*Defined in [Portalize.ts:67](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L67)*
+*Defined in [Portalize.ts:67](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L67)*
 
 Sets current module name. `setPortal` should be called first.
 
@@ -263,7 +277,7 @@ ___
 
 ▸ **setPortal**(portal: *`string`*): `void`
 
-*Defined in [Portalize.ts:55](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L55)*
+*Defined in [Portalize.ts:55](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L55)*
 
 Sets current module's portal path. Should be called before `setModuleName`
 

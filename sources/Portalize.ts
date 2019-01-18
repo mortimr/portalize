@@ -1,6 +1,6 @@
-import * as Fs      from 'fs';
-import * as Path    from 'path';
-import { sha3_224 } from 'js-sha3';
+import * as Fs        from 'fs';
+import * as Path      from 'path';
+import { sha3_224 }   from 'js-sha3';
 
 /**
  * Configuration for method calls
@@ -209,17 +209,16 @@ export class Portalize {
      * @param requirement
      */
     public requires(requirement: Requirement): boolean {
+        this.ready();
         if (!requirement.to) {
             requirement.to = requirement.from;
         }
 
         const events_dir: string = Path.join(this.portal, '.events');
-        console.log(Path.join(this.portal, '.events', `${requirement.from}_${requirement.to}-${requirement.file}_${requirement.action}`));
         const events: string[] = Fs.readdirSync(events_dir)
             .map((event: string): string => Path.join(this.portal, '.events', event))
             .filter((event: string): boolean =>
                 event.indexOf(Path.join(this.portal, '.events', `${requirement.from}_${requirement.to}-${requirement.file}_${requirement.action}`)) === 0);
-        console.log(events);
         if (!requirement.desc && events.length) {
             return true;
         }
@@ -230,6 +229,25 @@ export class Portalize {
         }
 
         return false;
+    }
+
+    /**
+     * Cleans all events and files for current module.
+     */
+    public clean(): void {
+        this.ready();
+
+        const events: string[] = Fs.readdirSync(Path.join(this.portal, '.events')) as string[];
+        for (const event of events) {
+            if (event.indexOf(`${this.module}_`) === 0) {
+                Fs.unlinkSync(Path.join(this.portal, '.events', event));
+            }
+        }
+
+        const files: string[] = Fs.readdirSync(Path.join(this.portal, this.module));
+        for (const file of files) {
+            Fs.unlinkSync(Path.join(this.portal, this.module, file));
+        }
     }
 
     private ready(): void {

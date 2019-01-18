@@ -27,7 +27,7 @@ Structure of Event files
 
 **● action**: *`string`*
 
-*Defined in [Portalize.ts:19](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L19)*
+*Defined in [Portalize.ts:19](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L19)*
 
 ___
 <a id="desc"></a>
@@ -36,7 +36,7 @@ ___
 
 **● desc**: *`string`*
 
-*Defined in [Portalize.ts:20](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L20)*
+*Defined in [Portalize.ts:20](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L20)*
 
 ___
 <a id="file"></a>
@@ -45,7 +45,7 @@ ___
 
 **● file**: *`string`*
 
-*Defined in [Portalize.ts:17](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L17)*
+*Defined in [Portalize.ts:17](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L17)*
 
 ___
 <a id="module"></a>
@@ -54,7 +54,7 @@ ___
 
 **● module**: *`string`*
 
-*Defined in [Portalize.ts:18](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L18)*
+*Defined in [Portalize.ts:18](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L18)*
 
 ___
 

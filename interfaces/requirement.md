@@ -28,7 +28,7 @@ Arguments for the require method
 
 **● action**: *`string`*
 
-*Defined in [Portalize.ts:31](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L31)*
+*Defined in [Portalize.ts:31](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L31)*
 
 ___
 <a id="desc"></a>
@@ -37,7 +37,7 @@ ___
 
 **● desc**: *`string`*
 
-*Defined in [Portalize.ts:30](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L30)*
+*Defined in [Portalize.ts:30](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L30)*
 
 ___
 <a id="file"></a>
@@ -46,7 +46,7 @@ ___
 
 **● file**: *`string`*
 
-*Defined in [Portalize.ts:29](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L29)*
+*Defined in [Portalize.ts:29](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L29)*
 
 ___
 <a id="from"></a>
@@ -55,7 +55,7 @@ ___
 
 **● from**: *`string`*
 
-*Defined in [Portalize.ts:27](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L27)*
+*Defined in [Portalize.ts:27](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L27)*
 
 ___
 <a id="to"></a>
@@ -64,7 +64,7 @@ ___
 
 **● to**: *`string`*
 
-*Defined in [Portalize.ts:28](https://github.com/mortimr/portalize/blob/master/sources/Portalize.ts#L28)*
+*Defined in [Portalize.ts:28](https://github.com/mortimr/portalize/blob/cf46dfc/sources/Portalize.ts#L28)*
 
 ___
 
