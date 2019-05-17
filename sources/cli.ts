@@ -28,7 +28,7 @@ const directory_name: string = path.dirname(configuration_path);
 let configuration: Module[];
 let main: Module;
 
-if (['init', 'info', 'dismantle', 'freeze'].indexOf(action) === -1) {
+if (['init', 'info', 'dismantle', 'freeze', 'restore'].indexOf(action) === -1) {
     console.log(`Error: Invalid action ${chalk.red(action)}`);
     process.exit(1);
 }
@@ -128,7 +128,7 @@ switch (action) {
 
         const date = moment(Date.now()).format('DD_MM_YYYY_HH_mm_ss');
 
-        const archive_name = (process.env.PORTALIZE_ARCHIVE_NAME || 'portalize.archive') + `.${date}.tar.gz`;
+        const archive_name = (process.env.PORTALIZE_ARCHIVE_PREFIX || 'portalize.archive') + `.${date}.tar.gz`;
         const portal_content = fs.readdirSync(main.path);
 
         tar.c({
@@ -137,7 +137,42 @@ switch (action) {
             C: main.path
         }, portal_content)
             .then((): void => {
-                console.log(`[${chalk.green('+')}] Created archive ${archive_name}`);
+                console.log(`[${chalk.green('+')}] Created archive ${chalk.yellow(archive_name)}`);
             });
 
+        break ;
+
+    case 'restore':
+
+        const archive = process.env.PORTALIZE_ARCHIVE_NAME;
+
+        if (!archive) {
+            log_err(new Error('Environment Variable PORTALIZE_ARCHIVE_NAME should be defined')) ;
+        }
+
+        try {
+            console.log(`[${chalk.green('+')}] Restoring ${chalk.blue('main')} module directory at ${chalk.yellow(main.path)} with archive ${chalk.yellow(archive)}`);
+            Fs.mkdirSync(main.path);
+
+            tar.x({
+                C: main.path,
+                file: archive
+            })
+                .then((): void => {
+
+                    for (const module of configuration) {
+                        if (module.name !== 'main') {
+                            console.log(`[${chalk.green('+')}] Creating ${chalk.green(module.name)} module link at ${chalk.yellow(module.path)}`);
+                            Fs.symlinkSync(main.path, module.path);
+                        }
+                    }
+
+                    console.log(`[${chalk.green('+')}] Successful portal restoration`);
+                });
+
+        } catch (e) {
+            soft_log_err(e);
+        }
+
+        break ;
 }
