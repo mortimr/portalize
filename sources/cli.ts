@@ -2,8 +2,11 @@ import { Module, ConfigurationChecker } from './Configuration';
 import * as path from 'path';
 import * as Fs from 'fs';
 import * as rimraf from 'rimraf';
+import * as tar from 'tar';
 
 import chalk   from 'chalk';
+import moment = require('moment');
+import * as fs from 'fs';
 
 const log_err = (e: Error): void => {
     console.error(`Error: ${chalk.red(e.message)}`);
@@ -25,7 +28,7 @@ const directory_name: string = path.dirname(configuration_path);
 let configuration: Module[];
 let main: Module;
 
-if (['init', 'info', 'dismantle'].indexOf(action) === -1) {
+if (['init', 'info', 'dismantle', 'freeze'].indexOf(action) === -1) {
     console.log(`Error: Invalid action ${chalk.red(action)}`);
     process.exit(1);
 }
@@ -118,4 +121,23 @@ switch (action) {
             console.log();
             console.log(`[${chalk.red('i')}] Try running ${chalk.yellow('dismantle')} and ${chalk.yellow('init')} again`);
         }
+
+        break ;
+
+    case 'freeze':
+
+        const date = moment(Date.now()).format('DD_MM_YYYY_HH_mm_ss');
+
+        const archive_name = (process.env.PORTALIZE_ARCHIVE_NAME || 'portalize.archive') + `.${date}.tar.gz`;
+        const portal_content = fs.readdirSync(main.path);
+
+        tar.c({
+            gzip: true,
+            file: archive_name,
+            C: main.path
+        }, portal_content)
+            .then((): void => {
+                console.log(`[${chalk.green('+')}] Created archive ${archive_name}`);
+            });
+
 }
