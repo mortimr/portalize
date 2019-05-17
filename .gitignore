@@ -2,3 +2,6 @@
 .idea
 
 /build
+/portal
+/test
+/package-lock.json
