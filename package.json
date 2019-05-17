@@ -1,6 +1,6 @@
 {
   "name": "portalize",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Symbolic Link Management Tool",
   "main": "./build/index.js",
   "scripts": {
