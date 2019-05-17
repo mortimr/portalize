@@ -32,17 +32,20 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "js-sha3": "^0.8.0",
+    "moment": "^2.24.0",
     "rimraf": "^2.6.3",
     "shx": "^0.3.2",
+    "tar": "^4.4.8",
     "ts-dynamic-type-checker": "0.0.13"
   },
   "devDependencies": {
-    "typedoc": "^0.14.0",
-    "typedoc-plugin-markdown": "^1.1.21",
     "@types/node": "^10.12.18",
     "@types/rimraf": "^2.0.2",
+    "@types/tar": "^4.0.0",
     "linted": "^1.0.5",
     "tslint": "^5.12.0",
+    "typedoc": "^0.14.0",
+    "typedoc-plugin-markdown": "^1.1.21",
     "typescript": "^3.2.2"
   }
 }
